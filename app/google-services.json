@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "929339903475",
+    "project_id": "ddas-c5ec7",
+    "storage_bucket": "ddas-c5ec7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929339903475:android:da45c632722f7b8e62d686",
+        "android_client_info": {
+          "package_name": "com.example.arrows"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7EkEpfjsJIym8HVLjqr29CYz8pumjvmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
