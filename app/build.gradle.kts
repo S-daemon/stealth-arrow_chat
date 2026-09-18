@@ -48,7 +48,7 @@ kotlin {
 dependencies {
   implementation(platform("com.google.firebase:firebase-bom:34.19.0"))
   implementation("com.google.firebase:firebase-analytics")
-  implementation("com.google.firebase:firebase-firestore-ktx")
+  implementation("com.google.firebase:firebase-firestore-ktx:24.11.0")
   val composeBom = platform(libs.androidx.compose.bom)
   implementation(composeBom)
   androidTestImplementation(composeBom)
