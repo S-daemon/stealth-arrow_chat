@@ -189,16 +189,17 @@ fun ArrowsGameScreen(
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Surface(
-                            shape = RoundedCornerShape(12.dp),
-                            color = Color(0xFF1E293B),
-                            modifier = Modifier.combinedClickable(
-                                onClick = {},
-                                onLongClick = {
-                                    vibrateShort(100)
-                                    showSecretDialog = true
-                                }
-                            )
-                        ) {
+    shape = RoundedCornerShape(12.dp),
+    color = Color(0xFF1E293B),
+    shadowElevation = 4.dp,
+    modifier = Modifier.combinedClickable(
+        onClick = {},
+        onLongClick = {
+            vibrateShort(100)
+            showSecretDialog = true
+        }
+    )
+) {
                             Row(
                                 modifier = Modifier.padding(horizontal = 14.dp, vertical = 6.dp),
                                 verticalAlignment = Alignment.CenterVertically
@@ -295,7 +296,7 @@ fun ArrowsGameScreen(
                 }
 
                 // Win Overlay
-                AnimatedVisibility(
+                this@ColumnScope.androidx.compose.animation.AnimatedVisibility(
                     visible = gameState.isWon,
                     enter = fadeIn(),
                     exit = fadeOut()
