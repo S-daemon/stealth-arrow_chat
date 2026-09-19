@@ -296,7 +296,7 @@ fun ArrowsGameScreen(
                 }
 
                 // Win Overlay
-                this@ColumnScope.androidx.compose.animation.AnimatedVisibility(
+                AnimatedVisibility(
                     visible = gameState.isWon,
                     enter = fadeIn(),
                     exit = fadeOut()

@@ -35,7 +35,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.FirebaseFirestoreException
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -104,7 +104,7 @@ fun SecretChatScreen(
 
     // Listen for real‑time updates
     LaunchedEffect(roomName) {
-        messagesRef.addSnapshotListener { snapshot: QuerySnapshot?, _ ->
+        messagesRef.addSnapshotListener { snapshot: QuerySnapshot?, error: FirebaseFirestoreException? ->
             snapshot?.documents?.let { docs ->
                 val newMessages = docs.mapNotNull { doc ->
                     val encrypted = doc.getString("encryptedPayload") ?: return@mapNotNull null
