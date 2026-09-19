@@ -22,8 +22,9 @@ import com.example.arrows.chat.SecretChatScreen
 import com.example.arrows.game.ArrowsGameScreen
 import com.example.arrows.theme.ArrowsTheme
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.initializeApp
+import com.google.firebase.ktx.initializeApp
 
+import kotlin.math.sqrt
 sealed interface AppScreen {
     data object Game : AppScreen
     data class SecretChat(val room: String, val pass: String) : AppScreen

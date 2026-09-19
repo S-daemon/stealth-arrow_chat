@@ -34,7 +34,7 @@ import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.QuerySnapshot
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -103,7 +103,7 @@ fun SecretChatScreen(
 
     // Listen for real‑time updates
     LaunchedEffect(roomName) {
-        messagesRef.addSnapshotListener { snapshot, _ ->
+        messagesRef.addSnapshotListener { snapshot: QuerySnapshot?, _ ->
             snapshot?.documents?.let { docs ->
                 val newMessages = docs.mapNotNull { doc ->
                     val encrypted = doc.getString("encryptedPayload") ?: return@mapNotNull null
@@ -177,7 +177,7 @@ fun SecretChatScreen(
             // Stealth Top Header
             Surface(
                 color = Color(0xFF131B2E),
-                elevation = 4.dp
+                shadowElevation = 4.dp
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Row(
@@ -289,7 +289,7 @@ fun SecretChatScreen(
             // Bottom Input Bar
             Surface(
                 color = Color(0xFF131B2E),
-                elevation = 8.dp
+                shadowElevation = 8.dp
             ) {
                 Row(
                     modifier = Modifier
